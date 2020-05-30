@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Hola desde editar</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Editando el registro de estudiante #{{student.id}}</h1>
+
+    <form action="/editar/{{ student.id }}" method="POST">
+        <input type="text" name="name" value="{{ student.name }}">
+        <input type="text" name="surname" value="{{ student.surname }}">
+        <input type="submit" value="Editar Estudiante">
+    </form>
+{% endblock %}
